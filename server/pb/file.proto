@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package pb;
+
+option go_package = "./pb";
+
+message LinkMessageRequest {
+  string package = 1;
+}
+
+message LinkMessageResponse {
+  string link = 1;
+}
+
+service LinkService {
+  rpc GetLink (LinkMessageRequest) returns (LinkMessageResponse);
+}
